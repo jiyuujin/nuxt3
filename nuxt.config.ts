@@ -7,5 +7,15 @@ export default defineNuxtConfig({
   serverMiddleware: [
     { path: '/api/hello', handler: '~/server/api/hello.ts'},
   ],
-  buildModules: ['@nuxtjs/svg']
+  buildModules: ['@nuxtjs/svg'],
+  build: {
+    postcss: {
+      postcssOptions: {
+        plugins: {
+          tailwindcss: {},
+          autoprefixer: {}
+        }
+      }
+    }
+  }
 })
