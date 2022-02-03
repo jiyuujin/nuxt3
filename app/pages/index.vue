@@ -6,3 +6,13 @@
     </div>
   </div>
 </template>
+
+<script setup lang="ts">
+import { useAsyncData } from '#app'
+import { fetchPosts } from '~/api/blog'
+
+const { data: posts } = await useAsyncData('posts', () => {
+  return fetchPosts()
+})
+console.log(posts)
+</script>
