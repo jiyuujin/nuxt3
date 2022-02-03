@@ -8,8 +8,12 @@
     "build": "nuxi build",
     "start": "node .output/server/index.mjs"
   },
+  "dependencies": {
+    "contentful": "^9.1.6"
+  },
   "devDependencies": {
     "@nuxtjs/svg": "^0.4.0",
+    "dotenv": "^16.0.0",
     "express": "^4.17.2",
     "nuxt3": "latest"
   }
