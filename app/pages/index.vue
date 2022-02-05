@@ -6,3 +6,17 @@
     </div>
   </div>
 </template>
+
+<script lang="ts">
+import { fetchPosts } from '~/api/blog'
+
+export default {
+  setup() {
+    const posts = ref()
+    onMounted(async () => {
+      posts.value = await fetchPosts()
+      console.log(posts.value)
+    })
+  }
+}
+</script>

@@ -1,4 +1,5 @@
-import { defineNuxtConfig } from 'nuxt3'
+import { defineNuxtConfig } from '@nuxt/bridge'
+import 'dotenv/config'
 
 // https://v3.nuxtjs.org/docs/directory-structure/nuxt.config
 export default defineNuxtConfig({
@@ -7,5 +8,15 @@ export default defineNuxtConfig({
   serverMiddleware: [
     { path: '/api/hello', handler: '~/server/api/hello.ts'},
   ],
-  buildModules: ['@nuxtjs/svg']
+  buildModules: ['@spearly/nuxt-module', '@nuxtjs/svg'],
+  spearly: {
+    options: {
+      apiKey: process.env.SPEARLY_API_KEY
+    },
+    mode: 'all'
+  },
+  publicRuntimeConfig: {
+    spearlyApiKey: process.env.SPEARLY_API_KEY,
+    spearlyContentId: process.env.SPEARLY_CONTENT_ID
+  }
 })
