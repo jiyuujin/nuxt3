@@ -8,9 +8,13 @@
     "build": "nuxi build",
     "start": "node .output/server/index.mjs"
   },
+  "dependencies": {
+    "contentful": "^9.1.28"
+  },
   "devDependencies": {
     "@nuxt/bridge": "npm:@nuxt/bridge-edge",
     "@nuxtjs/svg": "^0.4.0",
+    "dotenv": "^16.0.1",
     "express": "^4.17.2",
     "nuxt-edge": "latest"
   }

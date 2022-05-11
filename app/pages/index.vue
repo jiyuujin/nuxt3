@@ -6,3 +6,13 @@
     </div>
   </div>
 </template>
+
+<script setup lang="ts">
+import { useAsyncData } from '@nuxt/bridge/dist/runtime/asyncData'
+import { fetchPosts } from '~/api/blog'
+
+const { data: posts } = useAsyncData('posts', () => {
+  return fetchPosts()
+})
+console.log(posts)
+</script>
